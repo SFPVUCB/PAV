@@ -1,10 +1,33 @@
-<h1>Propiedades</h1>
-<img src ={{img2}} alt="image">
+
+<h1>NgModel</h1>
+<p>Nombre: {{person.name}}</p>
+<input type="text" required #nameImput = "ngModel" [ngModel]="person.name"/>
+<p>Valid: {{nameImput.valid}}</p>
+<p>Edad: {{person.age}}</p>
+<input type="number" max="20" min="10" required #ageImput = "ngModel" [ngModel]="person.age"/>
+<p>Valid: {{ageImput.valid}}</p>
+<hr/>
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="ToggleButton()">toggleButton</button>
+<p>Edad {{person.age}}</p>
+<button (click)="increaseage ()">Age ++</button>
+<div class="box"(scroll)="onScroll($event)">
+  <p>Mi nombre es sergio Fernando prudencio y estoy aprendiendo a programar con angular, vamos por la octava clase y ya estamos viendo eventos como ser la captura de click y scroll: prueba Extraídos de más de 400 mil materias y 55 publicaciones, los resultados del estudio cuestionan la opinión de que la única cosa que las personas quieren son "materias blandengues (Justin Bieber), asuntos rápidos, sin profundidad, o 'artículos- listas' (‘7 cosas que tu debes saber sobre el cabello de Donald Trump’)", dice el director-executivo del API, Tom Rosenstiel.</p>
+</div>
+<!-- usamos {{}} para mostrar varaibles u objetos en html -->
+<p>Nombre: {{person.name}}</p>
+<input type="text" [value]="person.name"(keyup)="changeName($event)"/>
 <hr/>
 
-<button [disabled] = "btnDisabled">Enviar</button>
-<input type="text" [value] = "name" />
+<h1>Propiedades</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" [value]="person.name"/>
+<progress max="100" [value]="person.age"></progress>
+<img width="100" [src]="person.avatar"/>
+
 <hr/>
+
 <h1>Hola Mundo</h1>
 <h2>{{'Hola mundo'.repeat(5)}}</h2>
 <p>3+3={{3+3}}</p>
