@@ -1,5 +1,14 @@
 <!-- aprendemos a usar condicionales ng -->
+<!-- ngFor con objetos -->
+<div>
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
 
+  </div>
+</div>
+<hr/>
 <!-- ngFor -->
 <h1>*ngfor</h1>
 <input type="text" required [(ngModel)]="newName"/>

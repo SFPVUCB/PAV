@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { elementAt } from 'rxjs';
-
+//importamos nuestras interface
+import {Product} from './product.model'
 @Component
 ({
   selector: 'app-root',
@@ -23,7 +24,67 @@ export class AppComponent
   //Clase numero 12 trabajando con ngfor
   names: string[] = ['sergio','fernando','prudencio','veliz'];
   newName = '';
+  //Clase numero 13 trabajando ng for con objetos
+  products: Product [] =
+  // = significa asiganacion y el : nos ayuda a hacer el tipado
+  [
+    {
+      name:'Pantalon',
+      price: 320,
+      image:'./assets/images/adidas.jpeg',
+      //nota si agregamos una catacteristica mas debemos hacer que coincida con el modelo de la interface
+      //guacho: si algunos productos tiene ese atributo pero otros no entonces preguntamos en la interface
+      //entonces ahora si podemos poner una nueva variable
+      category: 'Parte de abajo'
+    },
+    {
+      name:'Camisa',
+      price: 123,
+      image:'./assets/images/adidas.jpeg'
 
+    },
+    {
+      name:'Tenis Adidas',
+      price: 245,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Tenis Nike',
+      price: 678,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Tenis Puma',
+      price: 234,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Polera adidas',
+      price: 100,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Polera Nike',
+      price: 130,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Polera Puma',
+      price: 150,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Casaca Bolivar',
+      price: 400,
+      image:'./assets/images/adidas.jpeg'
+    },
+    {
+      name:'Casa Bolivar alterna',
+      price: 300,
+      image:'./assets/images/adidas.jpeg'
+    }
+
+  ]
   ToggleButton()
   {
     this.btnDisabled =! this.btnDisabled;
