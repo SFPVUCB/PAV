@@ -1,6 +1,23 @@
 <!-- aprendemos a usar condicionales ng -->
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name"/>
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase= "'nicolas'">Soy nicolas</p>
+  <p *ngSwitchCase= "'camilo'">Soy camilo</p>
+  <p *ngSwitchCase= "'sergio'">Soy sergio</p>
+  <p *ngSwitchDefault>No hay coincidencias</p>
+</div>
+<!--- un ejemplo de como se veria sin el switch case
+<p *ngIf="person.name === 'nicolas'">Soy nicolas</p>
+<p *ngIf="person.name === 'camilo'">Soy camilo</p>
+<p *ngIf="person.name === 'sergio'">Soy sergio</p>
+-->
+
+<hr/>
 <!-- ngFor con objetos -->
-<div>
+<h1>ngFor Objetos</h1>
+<!--Clase 15 agregamos estilos -->
+<div class="products--grid">
   <div *ngFor="let product of products">
     <img [src]="product.image" alt="image">
     <h2>{{product.price}}</h2>
