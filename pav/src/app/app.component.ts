@@ -88,6 +88,22 @@ export class AppComponent
     }
 
   ]
+  //Clase 18 ejemplo con ngStyles
+  // creamos el objeto box
+  box = {
+    width:100,
+    height: 100,
+    background: 'red'
+
+  }
+  //Clase 19 creamos un objeto para los registros
+  register=
+  {
+    name:'',
+    email:'',
+    password:''
+
+  }
   ToggleButton()
   {
     this.btnDisabled =! this.btnDisabled;
@@ -116,6 +132,11 @@ export class AppComponent
   {
     this.names.splice(index,1);
     //lo que ahcemos en esta linea con splice(indice,cuantos valores apartir de ahi)
+  }
+
+  onRegister()
+  {
+    console.log(this.register)
   }
 
 
